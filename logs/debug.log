@@ -1,0 +1,741 @@
+2026-04-03 15:31:46 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 69
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 69
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/
+Client IP: 192.168.0.20
+2026-04-03 15:32:00 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 69
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 69
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users
+Client IP: 192.168.0.20
+2026-04-03 15:32:09 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 69
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 69
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/eventos
+Client IP: 192.168.0.20
+2026-04-03 15:34:24 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 69
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 69
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users
+Client IP: 192.168.0.20
+2026-04-03 15:42:24 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 69
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 69
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users/add
+Client IP: 192.168.0.20
+2026-04-03 15:44:11 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 69
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 69
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users/add
+Client IP: 192.168.0.20
+2026-04-03 15:52:42 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 61
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 61
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/eventos/edit/2
+Client IP: 192.168.0.20
+2026-04-03 15:55:20 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 61
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 61
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/eventos/edit/1
+Client IP: 192.168.0.20
+2026-04-03 16:00:35 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 61
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 61
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/eventos/add
+Client IP: 192.168.0.20
+2026-04-03 16:00:47 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 61
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 61
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/eventos/edit/1
+Client IP: 192.168.0.20
+2026-04-03 16:04:48 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users/edit/1
+Client IP: 192.168.0.20
+2026-04-03 16:05:50 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users/add
+Client IP: 192.168.0.20
+2026-04-03 16:05:54 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/eventos/edit/1
+Client IP: 192.168.0.20
+2026-04-03 16:05:57 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/eventos/add
+Client IP: 192.168.0.20
+2026-04-03 16:06:07 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/eventos
+Client IP: 192.168.0.20
+2026-04-03 21:14:00 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/
+Client IP: 192.168.0.20
+2026-04-03 21:14:03 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users
+Client IP: 192.168.0.20
+2026-04-03 21:16:30 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users
+Client IP: 192.168.0.20
+2026-04-03 21:16:43 debug: Since 5.1.0: Calling `Cake\ORM\ResultSet` methods, such as `isEmpty()`, on PaginatedResultSet is deprecated. You must call `items()` first (for example, `items()->isEmpty()`).
+/home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line: 59
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `templates/Eventos/index.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php on line 377
+Trace:
+Cake\Error\ErrorTrap->handleError() [internal], line ??
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Core/functions.php, line 377
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Datasource/Paging/PaginatedResultSet.php, line 181
+Cake\Datasource\Paging\PaginatedResultSet->__call() /home/live/cakePhp/entregablefinal/app_ef/templates/Eventos/index.php, line 59
+/home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1201
+Cake\View\View->_evaluate() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 1158
+Cake\View\View->_render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/View/View.php, line 799
+Cake\View\View->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 710
+Cake\Controller\Controller->render() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/Controller.php, line 514
+Cake\Controller\Controller->invokeAction() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 166
+Cake\Controller\ControllerFactory->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php, line 141
+Cake\Controller\ControllerFactory->invoke() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/BaseApplication.php, line 362
+Cake\Http\BaseApplication->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 86
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php, line 157
+Cake\Http\Middleware\BodyParserMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php, line 118
+Cake\Routing\Middleware\RoutingMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php, line 71
+Cake\Routing\Middleware\AssetMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/src/Middleware/HostHeaderMiddleware.php, line 35
+App\Middleware\HostHeaderMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php, line 106
+Authentication\Middleware\AuthenticationMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php, line 115
+Cake\Error\Middleware\ErrorHandlerMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+DebugKit\Middleware\DebugKitMiddleware->process() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 82
+Cake\Http\Runner->handle() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Runner.php, line 60
+Cake\Http\Runner->run() /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Http/Server.php, line 98
+Cake\Http\Server->run() /home/live/cakePhp/entregablefinal/app_ef/webroot/index.php, line 37
+[main]
+
+Request URL: /eventos
+Referer URL: http://192.168.0.20:8765/users/add
+Client IP: 192.168.0.20

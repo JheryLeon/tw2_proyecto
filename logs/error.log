@@ -1,0 +1,239 @@
+2026-04-01 20:48:07 error: [Cake\Http\Exception\MissingControllerException] Controller class `Login` could not be found. in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 335
+Exception Attributes: array (
+  'controller' => 'Login',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- CORE/src/Controller/ControllerFactory.php:77
+- CORE/src/Http/BaseApplication.php:360
+- CORE/src/Http/Runner.php:86
+- CORE/src/Http/Middleware/BodyParserMiddleware.php:157
+- CORE/src/Http/Runner.php:82
+- CORE/src/Routing/Middleware/RoutingMiddleware.php:118
+- CORE/src/Http/Runner.php:82
+- CORE/src/Routing/Middleware/AssetMiddleware.php:71
+- CORE/src/Http/Runner.php:82
+- APP/Middleware/HostHeaderMiddleware.php:35
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php:106
+- CORE/src/Http/Runner.php:82
+- CORE/src/Error/Middleware/ErrorHandlerMiddleware.php:115
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- CORE/src/Http/Runner.php:82
+- CORE/src/Http/Runner.php:60
+- CORE/src/Http/Server.php:98
+- ROOT/webroot/index.php:37
+- [main]:
+
+Request URL: /login/users/
+Client IP: 192.168.0.20
+2026-04-02 11:28:20 error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [1045] Access denied for user 'jhery'@'10.89.1.3' (using password: YES) in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Database/Driver.php on line 203
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [1045] Access denied for user \'jhery\'@\'10.89.1.3\' (using password: YES)',
+)
+Stack Trace:
+- CORE/src/Database/Driver/Mysql.php:161
+- CORE/src/Database/Schema/SchemaDialect.php:60
+- CORE/src/Database/Driver/Mysql.php:207
+- CORE/src/Database/Schema/Collection.php:97
+- CORE/src/Database/Schema/Collection.php:87
+- CORE/src/Database/Schema/CachedCollection.php:107
+- CORE/src/ORM/Table.php:524
+- CORE/src/ORM/Query/CommonQueryTrait.php:48
+- CORE/src/ORM/Query/SelectQuery.php:209
+- CORE/src/ORM/Query/QueryFactory.php:34
+- CORE/src/ORM/Table.php:1747
+- ROOT/vendor/cakephp/authentication/src/Identifier/Resolver/OrmResolver.php:60
+- ROOT/vendor/cakephp/authentication/src/Identifier/PasswordIdentifier.php:162
+- ROOT/vendor/cakephp/authentication/src/Identifier/PasswordIdentifier.php:104
+- ROOT/vendor/cakephp/authentication/src/Authenticator/FormAuthenticator.php:165
+- ROOT/vendor/cakephp/authentication/src/AuthenticationService.php:165
+- ROOT/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php:87
+- CORE/src/Http/Runner.php:82
+- CORE/src/Error/Middleware/ErrorHandlerMiddleware.php:115
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- CORE/src/Http/Runner.php:82
+- CORE/src/Http/Runner.php:60
+- CORE/src/Http/Server.php:98
+- ROOT/webroot/index.php:37
+- [main]:
+
+Caused by: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'jhery'@'10.89.1.3' (using password: YES) in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Database/Driver.php on line 192
+Stack Trace:
+- CORE/src/Database/Driver.php:192
+- CORE/src/Core/Retry/CommandRetry.php:71
+- CORE/src/Database/Driver.php:201
+- CORE/src/Database/Driver/Mysql.php:161
+- CORE/src/Database/Schema/SchemaDialect.php:60
+- CORE/src/Database/Driver/Mysql.php:207
+- CORE/src/Database/Schema/Collection.php:97
+- CORE/src/Database/Schema/Collection.php:87
+- CORE/src/Database/Schema/CachedCollection.php:107
+- CORE/src/ORM/Table.php:524
+- CORE/src/ORM/Query/CommonQueryTrait.php:48
+- CORE/src/ORM/Query/SelectQuery.php:209
+- CORE/src/ORM/Query/QueryFactory.php:34
+- CORE/src/ORM/Table.php:1747
+- ROOT/vendor/cakephp/authentication/src/Identifier/Resolver/OrmResolver.php:60
+- ROOT/vendor/cakephp/authentication/src/Identifier/PasswordIdentifier.php:162
+- ROOT/vendor/cakephp/authentication/src/Identifier/PasswordIdentifier.php:104
+- ROOT/vendor/cakephp/authentication/src/Authenticator/FormAuthenticator.php:165
+- ROOT/vendor/cakephp/authentication/src/AuthenticationService.php:165
+- ROOT/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php:87
+- CORE/src/Http/Runner.php:82
+- CORE/src/Error/Middleware/ErrorHandlerMiddleware.php:115
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- CORE/src/Http/Runner.php:82
+- CORE/src/Http/Runner.php:60
+- CORE/src/Http/Server.php:98
+- ROOT/webroot/index.php:37
+- [main]:
+
+Request URL: /login
+Referer URL: http://172.25.0.217:8765/login
+Client IP: 172.25.0.217
+2026-04-03 15:41:57 error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [2006] MySQL server has gone away in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Database/Driver.php on line 203
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [2006] MySQL server has gone away',
+)
+Stack Trace:
+- CORE/src/Database/Driver/Mysql.php:161
+- CORE/src/Database/Schema/SchemaDialect.php:60
+- CORE/src/Database/Driver/Mysql.php:207
+- CORE/src/Database/Schema/Collection.php:97
+- CORE/src/Database/Schema/Collection.php:87
+- CORE/src/Database/Schema/CachedCollection.php:107
+- CORE/src/ORM/Table.php:524
+- CORE/src/View/Form/EntityContext.php:684
+- CORE/src/View/Helper/FormHelper.php:1319
+- CORE/src/View/Helper/FormHelper.php:1291
+- CORE/src/View/Helper/FormHelper.php:1092
+- ROOT/templates/Users/add.php:24
+- CORE/src/View/View.php:1201
+- CORE/src/View/View.php:1158
+- CORE/src/View/View.php:799
+- CORE/src/Controller/Controller.php:710
+- CORE/src/Controller/Controller.php:514
+- CORE/src/Controller/ControllerFactory.php:166
+- CORE/src/Controller/ControllerFactory.php:141
+- CORE/src/Http/BaseApplication.php:362
+- CORE/src/Http/Runner.php:86
+- CORE/src/Http/Middleware/BodyParserMiddleware.php:157
+- CORE/src/Http/Runner.php:82
+- CORE/src/Routing/Middleware/RoutingMiddleware.php:118
+- CORE/src/Http/Runner.php:82
+- CORE/src/Routing/Middleware/AssetMiddleware.php:71
+- CORE/src/Http/Runner.php:82
+- APP/Middleware/HostHeaderMiddleware.php:35
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php:106
+- CORE/src/Http/Runner.php:82
+- CORE/src/Error/Middleware/ErrorHandlerMiddleware.php:115
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- CORE/src/Http/Runner.php:82
+- CORE/src/Http/Runner.php:60
+- CORE/src/Http/Server.php:98
+- ROOT/webroot/index.php:37
+- [main]:
+
+Caused by: [PDOException] SQLSTATE[HY000] [2006] MySQL server has gone away in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Database/Driver.php on line 192
+Stack Trace:
+- CORE/src/Database/Driver.php:192
+- CORE/src/Core/Retry/CommandRetry.php:71
+- CORE/src/Database/Driver.php:201
+- CORE/src/Database/Driver/Mysql.php:161
+- CORE/src/Database/Schema/SchemaDialect.php:60
+- CORE/src/Database/Driver/Mysql.php:207
+- CORE/src/Database/Schema/Collection.php:97
+- CORE/src/Database/Schema/Collection.php:87
+- CORE/src/Database/Schema/CachedCollection.php:107
+- CORE/src/ORM/Table.php:524
+- CORE/src/View/Form/EntityContext.php:684
+- CORE/src/View/Helper/FormHelper.php:1319
+- CORE/src/View/Helper/FormHelper.php:1291
+- CORE/src/View/Helper/FormHelper.php:1092
+- ROOT/templates/Users/add.php:24
+- CORE/src/View/View.php:1201
+- CORE/src/View/View.php:1158
+- CORE/src/View/View.php:799
+- CORE/src/Controller/Controller.php:710
+- CORE/src/Controller/Controller.php:514
+- CORE/src/Controller/ControllerFactory.php:166
+- CORE/src/Controller/ControllerFactory.php:141
+- CORE/src/Http/BaseApplication.php:362
+- CORE/src/Http/Runner.php:86
+- CORE/src/Http/Middleware/BodyParserMiddleware.php:157
+- CORE/src/Http/Runner.php:82
+- CORE/src/Routing/Middleware/RoutingMiddleware.php:118
+- CORE/src/Http/Runner.php:82
+- CORE/src/Routing/Middleware/AssetMiddleware.php:71
+- CORE/src/Http/Runner.php:82
+- APP/Middleware/HostHeaderMiddleware.php:35
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php:106
+- CORE/src/Http/Runner.php:82
+- CORE/src/Error/Middleware/ErrorHandlerMiddleware.php:115
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- CORE/src/Http/Runner.php:82
+- CORE/src/Http/Runner.php:60
+- CORE/src/Http/Server.php:98
+- ROOT/webroot/index.php:37
+- [main]:
+
+Caused by: [PDOException] PDO::__construct(): Error while reading greeting packet. PID=3123 in /home/live/cakePhp/entregablefinal/app_ef/vendor/cakephp/cakephp/src/Database/Driver.php on line 192
+Stack Trace:
+- CORE/src/Database/Driver.php:192
+- CORE/src/Core/Retry/CommandRetry.php:71
+- CORE/src/Database/Driver.php:201
+- CORE/src/Database/Driver/Mysql.php:161
+- CORE/src/Database/Schema/SchemaDialect.php:60
+- CORE/src/Database/Driver/Mysql.php:207
+- CORE/src/Database/Schema/Collection.php:97
+- CORE/src/Database/Schema/Collection.php:87
+- CORE/src/Database/Schema/CachedCollection.php:107
+- CORE/src/ORM/Table.php:524
+- CORE/src/View/Form/EntityContext.php:684
+- CORE/src/View/Helper/FormHelper.php:1319
+- CORE/src/View/Helper/FormHelper.php:1291
+- CORE/src/View/Helper/FormHelper.php:1092
+- ROOT/templates/Users/add.php:24
+- CORE/src/View/View.php:1201
+- CORE/src/View/View.php:1158
+- CORE/src/View/View.php:799
+- CORE/src/Controller/Controller.php:710
+- CORE/src/Controller/Controller.php:514
+- CORE/src/Controller/ControllerFactory.php:166
+- CORE/src/Controller/ControllerFactory.php:141
+- CORE/src/Http/BaseApplication.php:362
+- CORE/src/Http/Runner.php:86
+- CORE/src/Http/Middleware/BodyParserMiddleware.php:157
+- CORE/src/Http/Runner.php:82
+- CORE/src/Routing/Middleware/RoutingMiddleware.php:118
+- CORE/src/Http/Runner.php:82
+- CORE/src/Routing/Middleware/AssetMiddleware.php:71
+- CORE/src/Http/Runner.php:82
+- APP/Middleware/HostHeaderMiddleware.php:35
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php:106
+- CORE/src/Http/Runner.php:82
+- CORE/src/Error/Middleware/ErrorHandlerMiddleware.php:115
+- CORE/src/Http/Runner.php:82
+- ROOT/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- CORE/src/Http/Runner.php:82
+- CORE/src/Http/Runner.php:60
+- CORE/src/Http/Server.php:98
+- ROOT/webroot/index.php:37
+- [main]:
+
+Request URL: /users/add
+Referer URL: http://192.168.0.20:8765/
+Client IP: 192.168.0.20
