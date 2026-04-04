@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      no_cache: true
+    container_name: cakephp_app
+    ports:
+      - "8085:80"
+    volumes:
+      - ./vendor:/var/www/html/vendor
+      - ./logs:/var/www/html/logs
+      - ./tmp:/var/www/html/tmp
+    environment:
+      - DB_HOST=192.168.56.250
+      - DB_PORT=3306
+      - DB_NAME=db_ef
+      - DB_USER=jhery
+      - DB_PASSWORD=jhery12675367
+      - DEBUG=true
+    restart: unless-stopped
+    user: root
