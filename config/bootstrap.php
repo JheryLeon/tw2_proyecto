@@ -125,8 +125,11 @@ ini_set('intl.default_locale', Configure::read('App.defaultLocale'));
 /*
  * Configure internationalization (i18n)
  * Load translation function for the application
+ * Solo establecer locale por defecto en CLI
  */
-I18n::setLocale(Configure::read('App.defaultLocale'));
+if (PHP_SAPI === 'cli') {
+    I18n::setLocale(Configure::read('App.defaultLocale'));
+}
 
 /*
  * Register application error and exception handlers.

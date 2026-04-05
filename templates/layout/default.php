@@ -249,37 +249,29 @@ $cakeDescription = 'CakePHP App';
                 $currentLocale = $locale ?? 'es';
                 ?>
                 
-                <div class="dropdown">
-                    <button class="theme-toggle-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Idioma">
-                        <i class="bi bi-globe"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item <?= $currentLocale === 'es' ? 'active' : '' ?>" href="#" onclick="changeLanguage('es')">
-                            <i class="bi bi-check <?= $currentLocale !== 'es' ? 'invisible' : '' ?>"></i> Español
-                        </a></li>
-                        <li><a class="dropdown-item <?= $currentLocale === 'en' ? 'active' : '' ?>" href="#" onclick="changeLanguage('en')">
-                            <i class="bi bi-check <?= $currentLocale !== 'en' ? 'invisible' : '' ?>"></i> English
-                        </a></li>
-                    </ul>
-                </div>
+                <?php if ($identity): ?>
+                    <span class="navbar-text me-2">
+                        <i class="bi bi-person-circle"></i> <?= h($identity->nombre) ?>
+                    </span>
+                <?php endif; ?>
                 
-                <button class="theme-toggle-btn" onclick="toggleTheme()" title="Cambiar tema">
+                <button class="theme-toggle-btn" onclick="toggleTheme()" title="<?= __('Toggle theme') ?>">
                     <i class="bi bi-moon-stars" id="theme-icon"></i>
                 </button>
                 
                 <?php if ($identity): ?>
                     <a href="<?= $this->Url->build('/users') ?>" class="btn btn-outline-primary btn-sm">
-                        <i class="bi bi-people"></i> <?= $currentLocale === 'en' ? 'Users' : 'Usuarios' ?>
+                        <i class="bi bi-people"></i> <?= __('Users') ?>
                     </a>
                     <a href="<?= $this->Url->build('/eventos') ?>" class="btn btn-outline-primary btn-sm">
-                        <i class="bi bi-calendar-event"></i> <?= $currentLocale === 'en' ? 'Events' : 'Eventos' ?>
+                        <i class="bi bi-calendar-event"></i> <?= __('Events') ?>
                     </a>
                     <a href="<?= $this->Url->build('/logout') ?>" class="btn btn-danger btn-sm">
-                        <i class="bi bi-box-arrow-right"></i> <?= $currentLocale === 'en' ? 'Logout' : 'Salir' ?>
+                        <i class="bi bi-box-arrow-right"></i> <?= __('Logout') ?>
                     </a>
                 <?php else: ?>
                     <a href="<?= $this->Url->build('/login') ?>" class="btn btn-primary btn-sm">
-                        <i class="bi bi-box-arrow-in-right"></i> <?= $currentLocale === 'en' ? 'Login' : 'Ingresar' ?>
+                        <i class="bi bi-box-arrow-in-right"></i> <?= __('Login') ?>
                     </a>
                 <?php endif; ?>
             </div>
@@ -316,16 +308,6 @@ $cakeDescription = 'CakePHP App';
             document.getElementById('theme-icon').className = 'bi bi-sun';
         }
         
-        function changeLanguage(lang) {
-            fetch('/users/setLanguage/' + lang, {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-Token': '<?= $this->request->getAttribute('csrfToken') ?>'
-                }
-            }).then(() => {
-                location.reload();
-            });
-        }
     </script>
 </body>
 </html>

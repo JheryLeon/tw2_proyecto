@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <?= $this->Form->control('organizador', ['class' => 'form-control', 'label' => 'Organizador']) ?>
-                        <?= $this->Form->button(__('Guardar'), ['class' => 'btn btn-success w-100 mt-3']) ?>
+                        <?= $this->Form->button(__('Save'), ['class' => 'btn btn-success w-100 mt-3']) ?>
                     <?= $this->Form->end() ?>
                 </div>
             </div>

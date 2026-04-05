@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User $user
+ * @var bool $isAdmin
  */
 ?>
 <div class="users edit content">
@@ -26,13 +27,13 @@
                     <?= $this->Form->create($user) ?>
                         <div class="row">
                             <div class="col-md-6">
-                                <?= $this->Form->control('nombre', ['class' => 'form-control', 'label' => 'Nombre']) ?>
+                                <?= $this->Form->control('nombre', ['class' => 'form-control', 'label' => 'Nombre', 'required' => true]) ?>
                             </div>
                             <div class="col-md-6">
-                                <?= $this->Form->control('apellido', ['class' => 'form-control', 'label' => 'Apellido']) ?>
+                                <?= $this->Form->control('apellido', ['class' => 'form-control', 'label' => 'Apellido', 'required' => true]) ?>
                             </div>
                         </div>
-                        <?= $this->Form->control('correo', ['class' => 'form-control', 'label' => 'Correo', 'type' => 'email']) ?>
+                        <?= $this->Form->control('correo', ['class' => 'form-control', 'label' => 'Correo', 'type' => 'email', 'required' => true]) ?>
                         <div class="row">
                             <div class="col-md-6">
                                 <?= $this->Form->control('telefono', ['class' => 'form-control', 'label' => 'Teléfono']) ?>
@@ -41,7 +42,20 @@
                                 <?= $this->Form->control('language', ['class' => 'form-control', 'label' => 'Idioma']) ?>
                             </div>
                         </div>
-                        <?= $this->Form->button(__('Guardar'), ['class' => 'btn btn-success w-100 mt-3']) ?>
+                        <?php if (!empty($isAdmin)): ?>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <?= $this->Form->control('role', [
+                                    'type' => 'select',
+                                    'options' => ['user' => 'Usuario', 'admin' => 'Administrador'],
+                                    'selected' => $user->role,
+                                    'class' => 'form-select', 
+                                    'label' => 'Rol'
+                                ]) ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                        <?= $this->Form->button(__('Save'), ['class' => 'btn btn-success w-100 mt-3']) ?>
                     <?= $this->Form->end() ?>
                 </div>
             </div>

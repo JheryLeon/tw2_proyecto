@@ -63,10 +63,13 @@ class EventosController extends AppController
         $userId = $this->getUserId();
         $locale = $this->getLocale();
         
+        $identity = $this->request->getAttribute('identity');
+        $isAdmin = $identity && isset($identity->role) && $identity->role === 'admin';
+        
         $query = $this->Eventos->find();
 
-        // Filtrar por usuario si está autenticado
-        if ($userId) {
+        // Admin ve todos los eventos, User solo los suyos
+        if (!$isAdmin && $userId) {
             $query->where(['user_id' => $userId]);
         }
 
@@ -121,8 +124,8 @@ class EventosController extends AppController
 
         $eventos = $this->paginate($query);
         
-        // Pasar el locale a la vista para las descripciones bilingües
-        $this->set(compact('eventos', 'publicos', 'search', 'publico', 'fechaDesde', 'fechaHasta', 'locale'));
+        // Pasar variables a la vista
+        $this->set(compact('eventos', 'publicos', 'search', 'publico', 'fechaDesde', 'fechaHasta', 'locale', 'isAdmin'));
     }
 
     /**
@@ -159,11 +162,11 @@ class EventosController extends AppController
             
             $evento = $this->Eventos->patchEntity($evento, $data);
             if ($this->Eventos->save($evento)) {
-                $this->Flash->success($this->getMessage('saved'));
+                $this->Flash->success(__('The event has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error($this->getMessage('not_saved'));
+            $this->Flash->error(__('The event could not be saved. Please, try again.'));
         }
         $this->set(compact('evento'));
     }
@@ -178,23 +181,24 @@ class EventosController extends AppController
     public function edit($id = null)
     {
         $userId = $this->getUserId();
+        $isAdmin = $this->isAdmin();
         
         $evento = $this->Eventos->get($id, contain: []);
         
-        // Verificar que el evento pertenece al usuario
-        if ($evento->user_id != $userId) {
-            $this->Flash->error($this->getMessage('not_owner'));
+        // Verificar permisos: admin puede editar cualquier evento, user solo el suyo
+        if (!$isAdmin && $evento->user_id != $userId) {
+            $this->Flash->error(__('You do not have permission to edit this event.'));
             return $this->redirect(['action' => 'index']);
         }
         
         if ($this->request->is(['patch', 'post', 'put'])) {
             $evento = $this->Eventos->patchEntity($evento, $this->request->getData());
             if ($this->Eventos->save($evento)) {
-                $this->Flash->success($this->getMessage('saved'));
+                $this->Flash->success(__('The event has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error($this->getMessage('not_saved'));
+            $this->Flash->error(__('The event could not be saved. Please, try again.'));
         }
         $this->set(compact('evento'));
     }
@@ -211,18 +215,19 @@ class EventosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         
         $userId = $this->getUserId();
+        $isAdmin = $this->isAdmin();
         $evento = $this->Eventos->get($id);
         
-        // Verificar que el evento pertenece al usuario
-        if ($evento->user_id != $userId) {
-            $this->Flash->error($this->getMessage('not_owner'));
+        // Verificar permisos: admin puede eliminar cualquier evento, user solo el suyo
+        if (!$isAdmin && $evento->user_id != $userId) {
+            $this->Flash->error(__('You do not have permission to delete this event.'));
             return $this->redirect(['action' => 'index']);
         }
         
         if ($this->Eventos->delete($evento)) {
-            $this->Flash->success($this->getMessage('deleted'));
+            $this->Flash->success(__('The event has been deleted.'));
         } else {
-            $this->Flash->error($this->getMessage('not_deleted'));
+            $this->Flash->error(__('The event could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

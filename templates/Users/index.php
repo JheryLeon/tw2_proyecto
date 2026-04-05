@@ -2,12 +2,17 @@
 /**
  * @var \App\View\AppView $this
  * @var iterable<\App\Model\Entity\User> $users
+ * @var bool $isAdmin
  */
+$identity = $this->request->getAttribute('identity');
+$currentUserId = $identity ? $identity->id : null;
 ?>
 <div class="users index content">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3><i class="bi bi-people"></i> <?= __('Users') ?></h3>
-        <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+        <?php if (!empty($isAdmin)): ?>
+            <?= $this->Html->link(__('Add User'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+        <?php endif; ?>
     </div>
 
     <div class="card">
@@ -22,6 +27,7 @@
                             <th><?= $this->Paginator->sort('correo', 'Correo') ?></th>
                             <th><?= $this->Paginator->sort('telefono', 'Teléfono') ?></th>
                             <th><?= $this->Paginator->sort('language', 'Idioma') ?></th>
+                            <th><?= $this->Paginator->sort('role', 'Rol') ?></th>
                             <th class="text-center"><?= __('Actions') ?></th>
                         </tr>
                     </thead>
@@ -34,18 +40,29 @@
                             <td><?= h($user->correo) ?></td>
                             <td><?= h($user->telefono) ?></td>
                             <td><?= h($user->language) ?></td>
+                            <td>
+                                <?php if ($user->role === 'admin'): ?>
+                                    <span class="badge bg-danger">Admin</span>
+                                <?php else: ?>
+                                    <span class="badge bg-secondary">User</span>
+                                <?php endif; ?>
+                            </td>
                             <td class="text-center">
                                 <?= $this->Html->link(__('View'), ['action' => 'view', $user->id], ['class' => 'btn btn-sm btn-outline-primary']) ?>
-                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id], ['class' => 'btn btn-sm btn-outline-warning']) ?>
-                                <?= $this->Html->link(__('Password'), ['action' => 'changePassword', $user->id], ['class' => 'btn btn-sm btn-outline-info']) ?>
-                                <?= $this->Form->postLink(
-                                    __('Delete'),
-                                    ['action' => 'delete', $user->id],
-                                    [
-                                        'class' => 'btn btn-sm btn-outline-danger',
-                                        'confirm' => __('Are you sure you want to delete # {0}?', $user->id)
-                                    ]
-                                ) ?>
+                                <?php if ($isAdmin || $user->id == $currentUserId): ?>
+                                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id], ['class' => 'btn btn-sm btn-outline-warning']) ?>
+                                    <?= $this->Html->link(__('Password'), ['action' => 'changePassword', $user->id], ['class' => 'btn btn-sm btn-outline-info']) ?>
+                                <?php endif; ?>
+                                <?php if ($isAdmin || $user->id == $currentUserId): ?>
+                                    <?= $this->Form->postLink(
+                                        __('Delete'),
+                                        ['action' => 'delete', $user->id],
+                                        [
+                                            'class' => 'btn btn-sm btn-outline-danger',
+                                            'confirm' => __('Are you sure you want to delete # {0}?', $user->id)
+                                        ]
+                                    ) ?>
+                                <?php endif; ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>

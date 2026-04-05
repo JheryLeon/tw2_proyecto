@@ -24,11 +24,11 @@
                         <?= $this->Form->control('correo', ['class' => 'form-control', 'label' => 'Correo', 'type' => 'email', 'required' => true]) ?>
                         <?= $this->Form->control('password', ['class' => 'form-control', 'label' => 'Contraseña', 'required' => true]) ?>
                         <?= $this->Form->control('telefono', ['class' => 'form-control', 'label' => 'Teléfono']) ?>
-                        <?= $this->Form->button(__('Registrarse'), ['class' => 'btn btn-success w-100 mt-3']) ?>
+                        <?= $this->Form->button('Registrarse', ['class' => 'btn btn-success w-100 mt-3']) ?>
                     <?= $this->Form->end() ?>
                     <div class="text-center mt-3">
                         <p class="mb-0">¿Ya tienes cuenta?</p>
-                        <?= $this->Html->link(__('Iniciar Sesión'), ['action' => 'login'], ['class' => 'btn btn-outline-primary btn-sm']) ?>
+                        <?= $this->Html->link('Iniciar Sesión', ['action' => 'login'], ['class' => 'btn btn-outline-primary btn-sm']) ?>
                     </div>
                 </div>
             </div>

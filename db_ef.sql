@@ -5,7 +5,6 @@ CREATE DATABASE db_ef;
 USE db_ef;
 
 -- Crear tabla users
-
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(250),
@@ -15,6 +14,7 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     password VARCHAR(255),
     language VARCHAR(10) DEFAULT 'es',
+    role VARCHAR(20) DEFAULT 'user',
     telefono VARCHAR(20)
 );
 
@@ -34,4 +34,14 @@ CREATE TABLE eventos (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+-- Insertar usuarios de prueba
+INSERT INTO users (nombre, apellido, correo, password, language, role, telefono) VALUES
+('test', 'admin', 'test@gmail.com', '$2y$10$abc123def456', 'es', 'admin', '00000000'),
+('test2', 'user', 'test2@gmail.com', '$2y$10$abc123def456', 'en', 'user', '11111111');
+
+-- Insertar eventos de prueba
+INSERT INTO eventos (titulo, fecha, ubicacion, capacidad, publico_objetivo, organizador, descripcion_es, descripcion_en, user_id) VALUES
+('Conferencia de Tecnología', '2026-05-15', 'Auditorio Principal', 100, 'Estudiantes', 'Ing. Jared López', 'Primera conferencia tecnológica del año', 'First technology conference of the year', 1),
+('Taller de Programación', '2026-05-20', 'Laboratorio 101', 30, 'Estudiantes', 'Lic. Maria García', 'Taller práctico de programación web', 'Practical web programming workshop', 1);
 

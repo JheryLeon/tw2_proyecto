@@ -42,7 +42,7 @@ class UsersController extends AppController
             $this->request->getSession()->write('Config.language', $lang);
         }
         
-        return $this->response;
+        return $this->response->withStatus(200);
     }
 
     /**
@@ -63,11 +63,11 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $data);
             
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('Usuario registrado correctamente. Ya puedes iniciar sesión.'));
+                $this->Flash->success('Usuario registrado correctamente. Ya puedes iniciar sesión.');
                 return $this->redirect(['action' => 'login']);
             }
             
-            $this->Flash->error(__('No se pudo registrar el usuario. Por favor, intente nuevamente.'));
+            $this->Flash->error('No se pudo registrar el usuario. Por favor, intente nuevamente.');
         }
         
         $this->set(compact('user'));
@@ -85,6 +85,37 @@ class UsersController extends AppController
         $result = $this->Authentication->getResult();
         
         if ($result->isValid()) {
+            // Aplicar idioma y rol del usuario desde la base de datos
+            $identity = $this->request->getAttribute('identity');
+            $lang = 'es';
+            $role = 'user';
+            
+            if ($identity) {
+                $userId = $identity->id ?? null;
+                if ($userId) {
+                    try {
+                        $user = $this->Users->get($userId);
+                        $lang = $user->language ?? 'es';
+                        $role = $user->role ?? 'user';
+                        
+                        // Actualizar identity con los datos frescos
+                        $this->Authentication->setIdentity($user);
+                    } catch (\Cake\Datasource\Exception\RecordNotFoundException $e) {
+                        $lang = 'es';
+                        $role = 'user';
+                    }
+                } else {
+                    $lang = $identity->language ?? 'es';
+                    $role = $identity->role ?? 'user';
+                }
+                
+                // Guardar en sesión y aplicar locale
+                $this->request->getSession()->write('Config.language', $lang);
+                $locale = ($lang === 'en') ? 'en_US' : 'es_ES';
+                \Cake\I18n\I18n::setLocale($locale);
+                $this->set('locale', $lang);
+            }
+            
             $redirect = $this->Authentication->getLoginRedirect();
             if (!$redirect || $redirect === '/') {
                 $redirect = '/';
@@ -93,7 +124,7 @@ class UsersController extends AppController
         }
         
         if ($this->request->is('post')) {
-            $this->Flash->error('Correo o contraseña inválidos');
+            $this->Flash->error('Correo o contraseña inválidos.');
         }
     }
 
@@ -118,10 +149,20 @@ class UsersController extends AppController
      */
     public function index()
     {
-        $query = $this->Users->find();
+        $identity = $this->request->getAttribute('identity');
+        $isAdmin = $identity && isset($identity->role) && $identity->role === 'admin';
+        
+        if ($isAdmin) {
+            // Admin ve todos los usuarios
+            $query = $this->Users->find();
+        } else {
+            // User solo ve su propia cuenta
+            $query = $this->Users->find()->where(['id' => $identity->id]);
+        }
+
         $users = $this->paginate($query);
 
-        $this->set(compact('users'));
+        $this->set(compact('users', 'isAdmin'));
     }
 
     /**
@@ -144,9 +185,20 @@ class UsersController extends AppController
      */
     public function add()
     {
+        $identity = $this->request->getAttribute('identity');
+        if (!$identity || !isset($identity->role) || $identity->role !== 'admin') {
+            $this->Flash->error(__('No tienes permiso para crear usuarios.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
+            $data = $this->request->getData();
+            if (!isset($data['role']) || empty($data['role'])) {
+                $data['role'] = 'user';
+            }
+            
+            $user = $this->Users->patchEntity($user, $data);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
@@ -166,10 +218,24 @@ class UsersController extends AppController
      */
     public function edit($id = null)
     {
+        $identity = $this->request->getAttribute('identity');
+        $isAdmin = $identity && isset($identity->role) && $identity->role === 'admin';
+        
+        // Si no es admin, solo puede editar su propia cuenta
+        if (!$isAdmin && $identity && $id != $identity->id) {
+            $this->Flash->error(__('No tienes permiso para editar este usuario.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        
         $user = $this->Users->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $data = $this->request->getData();
-            unset($data['password']); // No permitir cambio de password aquí
+            unset($data['password']);
+            
+            // Solo admin puede cambiar el rol
+            if (!$isAdmin) {
+                unset($data['role']);
+            }
             
             $user = $this->Users->patchEntity($user, $data);
             if ($this->Users->save($user)) {
@@ -179,7 +245,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $this->set(compact('user'));
+        $this->set(compact('user', 'isAdmin'));
     }
 
     /**
@@ -192,8 +258,25 @@ class UsersController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
+        
+        $identity = $this->request->getAttribute('identity');
+        $isAdmin = $identity && isset($identity->role) && $identity->role === 'admin';
+        
+        // Si no es admin, solo puede eliminar su propia cuenta
+        if (!$isAdmin && $identity && $id != $identity->id) {
+            $this->Flash->error(__('No tienes permiso para eliminar este usuario.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        
         $user = $this->Users->get($id);
+        $isOwnAccount = $identity && $identity->id == $id;
+        
         if ($this->Users->delete($user)) {
+            if ($isOwnAccount) {
+                $this->Flash->success(__('Your account has been deleted.'));
+                $this->Authentication->logout();
+                return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+            }
             $this->Flash->success(__('The user has been deleted.'));
         } else {
             $this->Flash->error(__('The user could not be deleted. Please, try again.'));

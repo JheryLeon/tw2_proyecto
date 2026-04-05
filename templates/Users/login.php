@@ -28,11 +28,11 @@
                                 'placeholder' => '••••••••'
                             ]) ?>
                         </div>
-                        <?= $this->Form->button(__('Iniciar Sesión'), ['class' => 'btn btn-primary w-100 mb-3']) ?>
+                        <?= $this->Form->button('Iniciar Sesión', ['class' => 'btn btn-primary w-100 mb-3']) ?>
                     <?= $this->Form->end() ?>
                     <div class="text-center">
                         <p class="mb-0">¿No tienes cuenta?</p>
-                        <?= $this->Html->link(__('Registrarse'), ['action' => 'register'], ['class' => 'btn btn-outline-primary btn-sm']) ?>
+                        <?= $this->Html->link('Registrarse', ['action' => 'register'], ['class' => 'btn btn-outline-primary btn-sm']) ?>
                     </div>
                 </div>
             </div>

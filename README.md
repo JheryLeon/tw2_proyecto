@@ -1,6 +1,6 @@
-# CakePHP Application - Sistema de Gestión de Eventos con Perfiles Multilingües
+# CakePHP Application - Sistema de Gestión de Eventos con Perfiles Multilingües y Roles
 
-Proyecto desarrollado con CakePhp
+Proyecto desarrollado con CakePHP 5.x para la Universidad Privada Domingo Savio (UPDS)
 
 ---
 
@@ -24,8 +24,9 @@ mysql -h TU_HOST -u TU_USUARIO -pTU_PASSWORD db_ef < db_ef.sql
 chmod -R 777 tmp logs
 
 # 6. Iniciar servidor
-bin/cake server -H 0.0.0.0  o podman-compose up
+bin/cake server -H 0.0.0.0 -p 8765
 ```
+
 ---
 
 ## Características del Proyecto
@@ -33,16 +34,30 @@ bin/cake server -H 0.0.0.0  o podman-compose up
 ### Funcionalidades Implementadas
 
 - ✅ Registro y autenticación de usuarios con contraseña hasheada (bcrypt)
+- ✅ Sistema de roles: Administrador y Usuario
 - ✅ Perfiles con idioma de preferencia (español/inglés)
 - ✅ CRUD completo de usuarios y eventos
-- ✅ Cada usuario gestiona solo sus propios eventos (relación user_id)
+- ✅ Permisos por rol:
+  - **Admin**: Ve todos los usuarios y eventos, puede crear/editar/eliminar cualquier usuario
+  - **User**: Solo ve su propia cuenta, solo sus propios eventos
 - ✅ Descripciones bilingües en eventos (descripcion_es, descripcion_en)
-- ✅ Cambio de idioma dinámico desde el navbar
 - ✅ Filtros de búsqueda en eventos (texto, público objetivo, fecha)
-- ✅ Diseño Bootstrap 5 con tema claro/oscuro
+- ✅ Diseño Bootstrap 5 con tema claro/oscuro (toggle)
+- ✅ Mensajes de alerta con diseño Bootstrap
+- ✅ Panel de usuario en navbar (muestra nombre del usuario logeado)
+- ✅ Eliminación de cuenta propia cierra sesión automáticamente
 - ✅ Control de versiones con Git
 - ✅ Documentación de uso de IA (Bitácora)
 - ✅ Configuración Docker/Podman para despliegue
+
+---
+
+## Usuarios de Prueba
+
+| Correo | Contraseña | Rol |
+|--------|------------|-----|
+| test@gmail.com | test123 | Administrador |
+| test2@gmail.com | test123 | Usuario |
 
 ---
 
@@ -152,12 +167,34 @@ bin/cake server -H 0.0.0.0  o podman-compose up
    http://localhost:8085
    ```
 
-### Configuración del Dockerfile
+---
 
-- PHP 8.4 con Apache
-- Extensiones: pdo, pdo_mysql, zip, intl, mbstring, xml
-- Puerto expuesto: 8085
-- Montaje de carpetas: vendor, logs, tmp
+## Sistema de Roles
+
+### Roles Definidos
+
+| Rol | Descripción |
+|-----|-------------|
+| `admin` | Administrador - acceso total |
+| `user` | Usuario regular - acceso limitado |
+
+### Permisos por Rol
+
+#### Administrador (admin)
+- ✅ Ver todos los usuarios
+- ✅ Crear nuevos usuarios
+- ✅ Editar cualquier usuario
+- ✅ Eliminar cualquier usuario
+- ✅ Ver todos los eventos
+- ✅ Editar/eliminar cualquier evento
+- ✅ Asignar rol a usuarios
+
+#### Usuario (user)
+- ✅ Ver solo su propia cuenta
+- ✅ Editar solo su propia cuenta
+- ✅ Eliminar su propia cuenta (cierra sesión automáticamente)
+- ✅ Ver solo sus propios eventos
+- ✅ Crear/editar/eliminar solo sus propios eventos
 
 ---
 
@@ -177,6 +214,7 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     password VARCHAR(255),
     language VARCHAR(10) DEFAULT 'es',
+    role VARCHAR(20) DEFAULT 'user',
     telefono VARCHAR(20)
 );
 ```
@@ -201,16 +239,6 @@ CREATE TABLE eventos (
 );
 ```
 
-### Importar Base de Datos
-
-El archivo `db_ef.sql` contiene la estructura completa y datos de ejemplo:
-
-```bash
-mysql -h (Ip) -u (Usuario) -p(password) db_ef < db_ef.sql
-```
-
-Compatible con MySQL y MariaDB.
-
 ---
 
 ## Internacionalización (i18n)
@@ -223,13 +251,8 @@ Compatible con MySQL y MariaDB.
 ### Cómo Funciona
 
 1. Cada usuario tiene un campo `language` en su perfil
-2. El idioma se puede cambiar desde el navbar (dropdown)
-3. La interfaz se actualiza dinámicamente al idioma seleccionado
-
-### Cambio de Idioma
-
-- Desde el navbar: haga clic en el ícono de.globo (🌐) y seleccione el idioma
-- Los textos de la interfaz cambian automáticamente
+2. Al iniciar sesión, la interfaz se muestra en el idioma configurado del usuario
+3. Los textos de la interfaz, mensajes y botones se traducen automáticamente
 
 ---
 
@@ -237,7 +260,7 @@ Compatible con MySQL y MariaDB.
 
 El listado de eventos incluye:
 
-- **Búsqueda por texto**: Busca en título, descripción y ubicación
+- **Búsqueda por texto**: Busca en título y descripción
 - **Filtro por público objetivo**: Seleccionar categoría
 - **Filtro por fecha**: Rango desde/hasta
 
@@ -250,11 +273,11 @@ El listado de eventos incluye:
 | Ruta | Descripción | Acceso |
 |------|-------------|--------|
 | `/users` | Listado de usuarios | Requiere login |
-| `/users/add` | Crear usuario | Requiere login |
+| `/users/add` | Crear usuario | Solo admin |
 | `/users/view/:id` | Ver usuario | Requiere login |
-| `/users/edit/:id` | Editar usuario | Requiere login |
-| `/users/changePassword/:id` | Cambiar contraseña | Requiere login |
-| `/users/delete/:id` | Eliminar usuario | Requiere login |
+| `/users/edit/:id` | Editar usuario | Propia cuenta o admin |
+| `/users/changePassword/:id` | Cambiar contraseña | Propia cuenta o admin |
+| `/users/delete/:id` | Eliminar usuario | Propia cuenta o admin |
 
 ### Eventos
 
@@ -263,8 +286,8 @@ El listado de eventos incluye:
 | `/eventos` | Listado de eventos | Requiere login |
 | `/eventos/add` | Crear evento | Requiere login |
 | `/eventos/view/:id` | Ver evento | Requiere login |
-| `/eventos/edit/:id` | Editar evento | Requiere login |
-| `/eventos/delete/:id` | Eliminar evento | Requiere login |
+| `/eventos/edit/:id` | Editar evento | Propio evento o admin |
+| `/eventos/delete/:id` | Eliminar evento | Propio evento o admin |
 
 ---
 
@@ -281,6 +304,7 @@ El listado de eventos incluye:
 - Solo usuarios autenticados pueden acceder al CRUD
 - Las rutas no autenticadas redirigen a `/login`
 - Cada usuario solo puede ver/editar sus propios eventos
+- Solo el admin puede crear usuarios
 
 ---
 
@@ -302,6 +326,7 @@ El listado de eventos incluye:
 - El diseño es completamente responsivo
 - Los formularios usan validación del lado del servidor
 - Los eventos son propios de cada usuario (filtrados por user_id)
+- Los usuarios regulares solo ven su propia cuenta en el listado
 
 ---
 
@@ -311,16 +336,6 @@ Ver el archivo `BITACORA_IA.md` para documentación completa del uso de herramie
 
 ---
 
-## Repositorio Git
-
-El proyecto está versionado en Git. Para clonar:
-
-```bash
-git clone https://github.com/tu-usuario/app_ef.git
-```
-
----
-
-
 *Proyecto - Tecnología Web II*
-*Fecha: Abril 2026*
+*Universidad Privada Domingo Savio (UPDS)*
+*Abril 2026*

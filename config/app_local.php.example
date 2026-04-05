@@ -18,11 +18,11 @@ return [
 
     'Datasources' => [
         'default' => [
-            'host' => env('DB_HOST', 'db'),  // 'db' para docker, '192.168.56.250' para servidor externo
+            'host' => env('IP_HOST'),
             'port' => env('DB_PORT', '3306'),
-            'username' => env('DB_USER', 'jhery'),
-            'password' => env('DB_PASSWORD', 'jhery12675367'),
-            'database' => env('DB_NAME', 'db_ef'),
+            'username' => env('DB_USER'),
+            'password' => env('DB_PASSWORD'),
+            'database' => env('db_ef'),
             'url' => env('DATABASE_URL', null),
         ],
 

@@ -53,17 +53,18 @@ class UsersTable extends Table
         $validator
             ->scalar('nombre')
             ->maxLength('nombre', 250)
-            ->allowEmptyString('nombre');
+            ->notEmptyString('nombre', 'El nombre es requerido');
 
         $validator
             ->scalar('apellido')
             ->maxLength('apellido', 250)
-            ->allowEmptyString('apellido');
+            ->notEmptyString('apellido', 'El apellido es requerido');
 
         $validator
             ->scalar('correo')
             ->maxLength('correo', 250)
-            ->allowEmptyString('correo');
+            ->email('El correo debe ser válido')
+            ->notEmptyString('correo', 'El correo es requerido');
 
         $validator
             ->dateTime('created_at')
@@ -84,6 +85,11 @@ class UsersTable extends Table
             ->scalar('language')
             ->maxLength('language', 10)
             ->allowEmptyString('language');
+
+        $validator
+            ->scalar('role')
+            ->maxLength('role', 20)
+            ->allowEmptyString('role');
 
         return $validator;
     }

@@ -38,7 +38,7 @@
                                 'placeholder' => '••••••••'
                             ]) ?>
                         </div>
-                        <?= $this->Form->button(__('Cambiar Contraseña'), ['class' => 'btn btn-primary w-100']) ?>
+                        <?= $this->Form->button(__('Change Password'), ['class' => 'btn btn-primary w-100']) ?>
                     <?= $this->Form->end() ?>
                 </div>
             </div>

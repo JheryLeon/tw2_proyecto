@@ -11,8 +11,8 @@
 ?>
 <div class="eventos index content">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3><i class="bi bi-calendar-event"></i> <?= __('Eventos') ?></h3>
-        <?= $this->Html->link(__('New Evento'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+        <h3><i class="bi bi-calendar-event"></i> <?= __('Events') ?></h3>
+        <?= $this->Html->link(__('Add Event'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
     </div>
 
     <div class="card mb-4">
@@ -21,7 +21,7 @@
                 <div class="col-md-4">
                     <label for="search" class="form-label"><?= __('Search') ?></label>
                     <input type="text" name="search" id="search" class="form-control" 
-                           placeholder="<?= __('Search by title...') ?>" value="<?= h($search ?? '') ?>">
+                           placeholder="<?= __('Search events...') ?>" value="<?= h($search ?? '') ?>">
                 </div>
                 <div class="col-md-3">
                     <label for="publico_objetivo" class="form-label"><?= __('Target Audience') ?></label>
@@ -33,11 +33,11 @@
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <label for="fecha_desde" class="form-label"><?= __('Date') ?> (Desde)</label>
+                    <label for="fecha_desde" class="form-label"><?= __('From date') ?></label>
                     <input type="date" name="fecha_desde" id="fecha_desde" class="form-control" value="<?= h($fechaDesde ?? '') ?>">
                 </div>
                 <div class="col-md-2">
-                    <label for="fecha_hasta" class="form-label"><?= __('Date') ?> (Hasta)</label>
+                    <label for="fecha_hasta" class="form-label"><?= __('To date') ?></label>
                     <input type="date" name="fecha_hasta" id="fecha_hasta" class="form-control" value="<?= h($fechaHasta ?? '') ?>">
                 </div>
                 <div class="col-md-1 d-flex align-items-end">
@@ -61,12 +61,12 @@
                     <thead>
                         <tr>
                             <th><?= $this->Paginator->sort('id', '#') ?></th>
-                            <th><?= $this->Paginator->sort('titulo', 'Título') ?></th>
-                            <th><?= $this->Paginator->sort('fecha', 'Fecha') ?></th>
-                            <th><?= $this->Paginator->sort('ubicacion', 'Ubicación') ?></th>
-                            <th><?= $this->Paginator->sort('capacidad', 'Capacidad') ?></th>
-                            <th><?= $this->Paginator->sort('publico_objetivo', 'Público Objetivo') ?></th>
-                            <th><?= $this->Paginator->sort('organizador', 'Organizador') ?></th>
+                            <th><?= $this->Paginator->sort('titulo', __('Title')) ?></th>
+                            <th><?= $this->Paginator->sort('fecha', __('Date')) ?></th>
+                            <th><?= $this->Paginator->sort('ubicacion', __('Location')) ?></th>
+                            <th><?= $this->Paginator->sort('capacidad', __('Capacity')) ?></th>
+                            <th><?= $this->Paginator->sort('publico_objetivo', __('Target Audience')) ?></th>
+                            <th><?= $this->Paginator->sort('organizador', __('Organizer')) ?></th>
                             <th class="text-center"><?= __('Actions') ?></th>
                         </tr>
                     </thead>
@@ -103,8 +103,8 @@
     <?php if ($eventos->items()->isEmpty()): ?>
         <div class="text-center py-5">
             <i class="bi bi-calendar-x" style="font-size: 3rem; color: #6c757d;"></i>
-            <p class="text-muted mt-3">No hay eventos disponibles</p>
-            <?= $this->Html->link(__('Crear el primer evento'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+            <p class="text-muted mt-3"><?= __('No events yet. Create your first event!') ?></p>
+            <?= $this->Html->link(__('Add Event'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
         </div>
     <?php endif; ?>
 

@@ -17,6 +17,7 @@ use Authentication\PasswordHasher\DefaultPasswordHasher;
  * @property \Cake\I18n\DateTime|null $updated_at
  * @property string|null $password
  * @property string|null $language
+ * @property string|null $role
  * @property string|null $telefono
  */
 class User extends Entity
@@ -29,6 +30,16 @@ class User extends Entity
         return null;
     }
 
+    protected function _setRole(string $role): string
+    {
+        return in_array($role, ['admin', 'user']) ? $role : 'user';
+    }
+
+    public function isAdmin(): bool
+    {
+        return isset($this->role) && $this->role === 'admin';
+    }
+
     protected array $_accessible = [
         'nombre' => true,
         'apellido' => true,
@@ -37,6 +48,7 @@ class User extends Entity
         'updated_at' => true,
         'password' => true,
         'language' => true,
+        'role' => true,
         'telefono' => true,
     ];
 
