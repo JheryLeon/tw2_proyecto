@@ -1,31 +1,6 @@
 # CakePHP Application - Sistema de Gestión de Eventos con Perfiles Multilingües y Roles
 
-Proyecto desarrollado con CakePHP 5.x para la Universidad Privada Domingo Savio (UPDS)
-
----
-
-## Pasos para instalar
-
-Después de clonar el repositorio, ejecutar estos comandos:
-
-```bash
-# 1. Instalar dependencias
-composer install
-
-# 2. Copiar archivo de configuración de base de datos
-cp config/app_local.example.php config/app_local.php
-
-# 3. Editar config/app_local.php con tus credenciales de MySQL
-
-# 4. Importar la base de datos
-mysql -h TU_HOST -u TU_USUARIO -pTU_PASSWORD db_ef < db_ef.sql
-
-# 5. Dar permisos a carpetas
-chmod -R 777 tmp logs
-
-# 6. Iniciar servidor
-bin/cake server -H 0.0.0.0 -p 8765
-```
+Proyecto desarrollado con CakePHP con CRUD de usuarios y eventos
 
 ---
 
@@ -49,15 +24,6 @@ bin/cake server -H 0.0.0.0 -p 8765
 - ✅ Control de versiones con Git
 - ✅ Documentación de uso de IA (Bitácora)
 - ✅ Configuración Docker/Podman para despliegue
-
----
-
-## Usuarios de Prueba
-
-| Correo | Contraseña | Rol |
-|--------|------------|-----|
-| test@gmail.com | test123 | Administrador |
-| test2@gmail.com | test123 | Usuario |
 
 ---
 
@@ -85,7 +51,7 @@ bin/cake server -H 0.0.0.0 -p 8765
 
 3. **Configurar base de datos**
 
-   Editar `config/app_local.php` con las credenciales de MySQL:
+   Modifica la carpeta `config/app_local.php.example` y modifica con tus credenciales de MySQL:
    ```php
    'Datasources' => [
        'default' => [
@@ -147,21 +113,36 @@ bin/cake server -H 0.0.0.0 -p 8765
    composer install
    ```
 
-3. **Permisos de carpetas**
+3. **Configurar base de datos**
+   
+   Editar `docker-compose.yml` con los datos de tu servidor MySQL:
+   ```yaml
+   environment:
+     - DB_HOST=TU_IP_MYSQL
+     - DB_PORT=3306
+     - DB_NAME=db_ef
+     - DB_USER=TU_USUARIO
+     - DB_PASSWORD=TU_PASSWORD
+   ```
+
+4. **Copiar archivo de configuración**
+   ```bash
+   cp config/app_local.example.php config/app_local.php
+   ```
+   
+   Editar `config/app_local.php` con las credenciales de MySQL.
+
+5. **Permisos de carpetas**
    ```bash
    chmod -R 777 tmp logs
    ```
 
-4. **Configurar base de datos** (si es diferente al default)
-
-   Editar `config/app_local.php` con la IP de tu servidor MySQL
-
-5. **Ejecutar contenedor**
+6. **Ejecutar contenedor**
    ```bash
-   podman-compose up -d web
+   podman-compose up -d --build
    ```
 
-6. **Acceder a la aplicación**
+7. **Acceder a la aplicación**
 
    ```
    http://localhost:8085

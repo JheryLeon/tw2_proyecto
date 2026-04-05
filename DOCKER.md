@@ -21,10 +21,10 @@ Editar `config/app_local.php` si necesitas cambiar las credenciales:
 ```php
 'Datasources' => [
     'default' => [
-        'host' => '192.168.56.250',  // IP de tu servidor MySQL
+        'host' => '',  // IP de tu servidor MySQL
         'port' => '3306',
-        'username' => 'jhery',
-        'password' => 'jhery12675367',
+        'username' => '',
+        'password' => '',
         'database' => 'db_ef',
     ],
 ],

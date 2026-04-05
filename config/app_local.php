@@ -18,8 +18,8 @@ return [
 
     'Datasources' => [
         'default' => [
-            'host' => env('IP_HOST'),
-            'port' => env('DB_PORT', '3306'),
+            'host' => env('IP_HOST')
+            'port' => env('3306'),
             'username' => env('DB_USER'),
             'password' => env('DB_PASSWORD'),
             'database' => env('db_ef'),

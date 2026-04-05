@@ -43,5 +43,5 @@ INSERT INTO users (nombre, apellido, correo, password, language, role, telefono)
 -- Insertar eventos de prueba
 INSERT INTO eventos (titulo, fecha, ubicacion, capacidad, publico_objetivo, organizador, descripcion_es, descripcion_en, user_id) VALUES
 ('Conferencia de Tecnología', '2026-05-15', 'Auditorio Principal', 100, 'Estudiantes', 'Ing. Jared López', 'Primera conferencia tecnológica del año', 'First technology conference of the year', 1),
-('Taller de Programación', '2026-05-20', 'Laboratorio 101', 30, 'Estudiantes', 'Lic. Maria García', 'Taller práctico de programación web', 'Practical web programming workshop', 1);
+('Taller de Programación', '2026-05-20', 'Laboratorio 101', 30, 'Estudiantes', 'Lic. Maria García', 'Taller práctico de programación web', 'Practical web programming workshop', 2);
 
