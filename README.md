@@ -132,17 +132,22 @@ Proyecto desarrollado con CakePHP con CRUD de usuarios y eventos
    
    Editar `config/app_local.php` con las credenciales de MySQL.
 
-5. **Permisos de carpetas**
+5. **Importar base de datos**
+   ```bash
+   mysql -h (IP) -u (usuario) -p(password) db_ef < db_ef.sql
+   ```
+   
+6. **Permisos de carpetas**
    ```bash
    chmod -R 777 tmp logs
    ```
 
-6. **Ejecutar contenedor**
+7. **Ejecutar contenedor**
    ```bash
    podman-compose up -d --build
    ```
 
-7. **Acceder a la aplicación**
+8. **Acceder a la aplicación**
 
    ```
    http://localhost:8085
