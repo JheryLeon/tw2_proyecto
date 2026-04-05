@@ -51,7 +51,7 @@ Proyecto desarrollado con CakePHP con CRUD de usuarios y eventos
 
 3. **Configurar base de datos**
 
-   Modifica la carpeta `config/app_local.php.example` y modifica con tus credenciales de MySQL:
+   Modifica la carpeta `config/app_local.php` con tus credenciales de MySQL:
    ```php
    'Datasources' => [
        'default' => [
