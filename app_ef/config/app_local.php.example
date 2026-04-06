@@ -1,0 +1,48 @@
+<?php
+
+use function Cake\Core\env;
+
+/*
+ * Copiar este archivo como app_local.php y ajustar según sea necesario.
+ * Para Docker usar: host = 'db'
+ * Para servidor externo usar: host = '' (o la IP de tu servidor MySQL)
+ */
+
+// CONFIGURACIÓN PARA DOCKER (usar cuando ejecuta con docker-compose)
+return [
+    'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
+
+    'Security' => [
+        'salt' => env('SECURITY_SALT', '0fca6700857da683c464cca25c1710e0aed03f632babd61fe2a58f993c23bd10'),
+    ],
+
+    'Datasources' => [
+        'default' => [
+            'host' => env('DB_HOST'),  
+            'port' => env('DB_PORT'),
+            'username' => env('DB_USER'),
+            'password' => env('DB_PASSWORD'),
+            'database' => env('db_ef'),
+            'url' => env('DATABASE_URL', null),
+        ],
+
+        'test' => [
+            'host' => 'localhost',
+            'username' => 'my_app',
+            'password' => 'secret',
+            'database' => 'test_myapp',
+            'url' => env('DATABASE_TEST_URL', 'sqlite://127.0.0.1/tmp/tests.sqlite'),
+        ],
+    ],
+
+    'EmailTransport' => [
+        'default' => [
+            'host' => 'localhost',
+            'port' => 25,
+            'username' => null,
+            'password' => null,
+            'client' => null,
+            'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
+        ],
+    ],
+];
