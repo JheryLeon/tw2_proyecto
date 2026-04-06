@@ -40,7 +40,7 @@ Proyecto desarrollado con CakePHP con CRUD de usuarios y eventos
 
 1. **Clonar el proyecto**
    ```bash
-   git clone https://github.com/tu-usuario/app_ef.git
+   git clone https://github.com/JheryLeon/tw2_proyecto.git
    cd app_ef
    ```
 
@@ -51,23 +51,26 @@ Proyecto desarrollado con CakePHP con CRUD de usuarios y eventos
 
 3. **Configurar base de datos**
 
-   Modifica la carpeta `config/app_local.php` con tus credenciales de MySQL:
+   Modifica la carpeta `config/app_local.example.php` con tus credenciales de MySQL y guarda esa carpeta con nombre `config/app_local.php`: 
    ```php
    'Datasources' => [
-       'default' => [
-           'host' => '',  // IP de tu servidor MySQL
-           'port' => '3306',
-           'username' => '',
-           'password' => '',
-           'database' => 'db_ef',
-       ]
-   ]
+        'default' => [
+            'host' => 'localhost',
+            /*
+             * CakePHP will use the default DB port based on the driver selected
+             * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
+             * the following line and set the port accordingly
+             */
+            //'port' => 'non_standard_port_number',
+
+            'username' => 'my_app',
+            'password' => 'secret',
+
+            'database' => 'my_app',
    ```
 
 4. **Importar base de datos**
-   ```bash
-   mysql -h (IP) -u (usuario) -p(password) db_ef < db_ef.sql
-   ```
+   bd_ef.sql
 
 5. **Permisos de carpetas**
    ```bash
@@ -76,7 +79,7 @@ Proyecto desarrollado con CakePHP con CRUD de usuarios y eventos
 
 6. **Iniciar servidor**
    ```bash
-   bin/cake server -H 0.0.0.0 -p 8765
+   bin/cake server -H 0.0.0.0
    ```
 
 7. **Acceder a la aplicación**
@@ -104,7 +107,7 @@ Proyecto desarrollado con CakePHP con CRUD de usuarios y eventos
 
 1. **Clonar el proyecto**
    ```bash
-   git clone https://github.com/tu-usuario/app_ef.git
+   git clone https://github.com/JheryLeon/tw2_proyecto.git
    cd app_ef
    ```
 
@@ -125,17 +128,13 @@ Proyecto desarrollado con CakePHP con CRUD de usuarios y eventos
      - DB_PASSWORD=TU_PASSWORD
    ```
 
-4. **Copiar archivo de configuración**
-   ```bash
-   cp config/app_local.example.php config/app_local.php
-   ```
+4. **Editar archivo de configuración (omitir este paso si ya cambiaste las credenciales)**
    
-   Editar `config/app_local.php` con las credenciales de MySQL.
+   Editar `config/app_local.example.php` con las credenciales de MySQL, y guardar el achivo con nombre `config/app_local.php`
 
 5. **Importar base de datos**
-   ```bash
-   mysql -h (IP) -u (usuario) -p(password) db_ef < db_ef.sql
-   ```
+   db_ef.sql
+   
    
 6. **Permisos de carpetas**
    ```bash
